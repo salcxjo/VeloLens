@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+
+# VeloLens runtime files
+sessions/
+models/
+
+# Secrets — never commit these
+# (add your credentials to config.py locally, don't push them)
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

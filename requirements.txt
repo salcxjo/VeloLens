@@ -1,0 +1,27 @@
+# VeloLens Phase 1 dependencies
+# Install on Pi: pip install -r requirements.txt --break-system-packages
+
+# ── core CV ───────────────────────────────────────────────────────────────────
+opencv-contrib-python==4.8.1.78
+
+# Pose estimation — MoveNet Lightning via TFLite (ARM wheel available for Pi 4)
+# tflite-runtime is ~5 MB vs tensorflow's ~500 MB, strongly preferred on Pi.
+# If tflite-runtime has no wheel for your Python version, fall back to tensorflow.
+tflite-runtime>=2.14.0
+
+numpy==1.26.4
+scipy==1.12.0
+filterpy==1.4.5
+
+# ── utilities ─────────────────────────────────────────────────────────────────
+dataclasses-json==0.6.4
+rich==13.7.0
+requests==2.31.0
+
+# ── BLE cadence broadcast ─────────────────────────────────────────────────────
+bleak==0.21.1
+bless==0.2.2
+
+# ── NOT included (removed) ────────────────────────────────────────────────────
+# mediapipe — no ARM wheel for Raspberry Pi OS Bookworm (aarch64 / armv7l)
+#   replaced by tflite-runtime + MoveNet Lightning (same model, direct TFLite)
